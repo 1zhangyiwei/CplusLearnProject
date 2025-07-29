@@ -1,0 +1,20 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",       // 配置名称，可自定义，表示这是 Windows 下的配置
+            "includePath": [
+                "${workspaceFolder}/**"         // 项目目录及其所有子目录
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compilerPath": "D:\\Profession_software\\MinGW\\mingw64\\bin\\g++.exe",  // MinGW 的 g++ 编译器路径
+            "cStandard": "c17",         // C语言标准（可以是 c99、c11 等）
+            "cppStandard": "gnu++17",    // C++标准（可以是 c++14、c++17、c++20 等）
+            "intelliSenseMode": "windows-gcc-x64"   // IntelliSense 模式（gcc 编译器 + 64 位）
+        }
+    ],
+    "version": 4
+}

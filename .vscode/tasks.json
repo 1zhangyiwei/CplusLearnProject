@@ -1,30 +1,30 @@
 {
+    "version": "2.0.0",
     "tasks": [
         {
-            "type": "cppbuild",
-            "label": "C/C++: g++.exe 生成活动文件",
-            "command": "C:\\Program Files\\MinGW\\mingw64\\bin\\g++.exe",
+            "label": "build",
+            "type": "shell",
+            "command": "D:\\Profession_software\\MinGW\\mingw64\\bin\\g++.exe",
             "args": [
-                "-fdiagnostics-color=always",
-                "-g",
-                // "${file}",
+                "-fdiagnostics-color=always",        // 使编译器输出带颜色的诊断信息
+                "-g",                                // 生成调试信息
+                // "${file}",                           // 当前活动文件
                 "*.cpp",                          //同时编译当前文件夹下所有的.cpp文件
                 "-o",
-                // "${fileDirname}\\${fileBasenameNoExtension}.exe"
-                "${fileDirname}\\finally.exe"    //最终多文件调试生成的可执行程序finally.exe                
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"     // 生成的可执行文件名为当前文件名（不带扩展名）.exe
+                // "${fileDirname}\\finally.exe"    //最终多文件调试生成的可执行程序finally.exe
             ],
             "options": {
-                "cwd": "${fileDirname}"
+                "cwd": "${fileDirname}"                // 设置工作目录为当前文件所在目录
             },
-            "problemMatcher": [
-                "$gcc"
-            ],
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
-            "detail": "调试器生成的任务。"
+            "problemMatcher": [
+                "$gcc"                                // 使用 GCC 的问题匹配器来捕获编译错误和警告
+            ],
+            "detail": "用 MinGW 编译当前文件"           // 任务详情
         }
-    ],
-    "version": "2.0.0"
+    ]
 }

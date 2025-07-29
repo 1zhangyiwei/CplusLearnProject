@@ -18,79 +18,79 @@
     而且，在创建的头文件中，还要包含一般的c++头文件（iostream,using namespace std等）。
 */
 
-// #include <iostream>
-// #include <string>
-// #include "add.h"
+//  #include <iostream>
+//  #include <string>
+//  #include "add.h"
 
-// using namespace std;
+//  using namespace std;
 
-// void swap(int num1,int num2)
-// {
-//     cout<<"交换前："<<endl;
-//     cout<<"num1="<<num1<<endl;
-//     cout<<"num2="<<num2<<endl;    
-//     int temp = num1;
-//     num1 = num2;
-//     num2 = temp;
-//     cout<<"交换后："<<endl;
-//     cout<<"num1="<<num1<<endl;
-//     cout<<"num2="<<num2<<endl; 
-// }
+//  void swap(int num1,int num2)
+//  {
+//      cout<<"交换前："<<endl;
+//      cout<<"num1="<<num1<<endl;
+//      cout<<"num2="<<num2<<endl;    
+//      int temp = num1;
+//      num1 = num2;
+//      num2 = temp;
+//      cout<<"交换后："<<endl;
+//      cout<<"num1="<<num1<<endl;
+//      cout<<"num2="<<num2<<endl; 
+//  }
 
-// //无参无返
-// void test01()
-// {
-//     cout<<"this is test01"<<endl;
-// }
+//  //无参无返
+//  void test01()
+//  {
+//      cout<<"this is test01"<<endl;
+//  }
 
-// //有参无返
-// void test02(int a)
-// {
-//     cout<<"this is test02 and a = "<<a<<endl;
-// }
+//  //有参无返
+//  void test02(int a)
+//  {
+//      cout<<"this is test02 and a = "<<a<<endl;
+//  }
 
-// //无参有返
-// int test03()
-// {
-//     cout<<"this is test03"<<endl;
+//  //无参有返
+//  int test03()
+//  {
+//      cout<<"this is test03"<<endl;
 
-//     return 100;
-// }
+//      return 100;
+//  }
 
-// //有参有返
-// int test04(int a)
-// {
-//     cout<<"this is test04"<<endl;
+//  //有参有返
+//  int test04(int a)
+//  {
+//      cout<<"this is test04"<<endl;
 
-//     return 2*a;
-// }
+//      return 2*a;
+//  }
 
-// int main()
-// {
-//     int a, b;
-//     cin>>a>>b;
+//  int main()
+//  {
+//      int a, b;
+//      cin>>a>>b;
 
-//     int c;
-//     c = add(a, b);             //函数的分文件编写
-//     cout<<"最终的结果为:"<<c<<endl;
+//     //  int c;
+//     //  c = add(a, b);             //函数的分文件编写
+//     //  cout<<"最终的结果为:"<<c<<endl;
 
-//     // cout<<"a = "<<a<<endl;
-//     // cout<<"b = "<<b<<endl;
-//     // swap(a, b);
-//     // cout<<"a = "<<a<<endl;
-//     // cout<<"b = "<<b<<endl;
+//     //  cout<<"a = "<<a<<endl;
+//     //  cout<<"b = "<<b<<endl;
+//     //  swap(a, b);
+//     //  cout<<"a = "<<a<<endl;
+//     //  cout<<"b = "<<b<<endl;
 
-//     // test01();
-//     // test02(100);
-//     // int c = test03();
-//     // cout<<"c = "<<c<<endl;
-//     // int d = test04(20);
-//     // cout<<"d = "<<d<<endl;
+//      test01();
+//      test02(100);
+//      int c = test03();
+//      cout<<"c = "<<c<<endl;
+//      int d = test04(20);
+//      cout<<"d = "<<d<<endl;
 
-//     // system("pause");
+//      system("pause");
 
-//     return 0;
-// }
+//      return 0;
+//  }
 
 
 
@@ -114,37 +114,37 @@
     空指针和野指针都不是我们申请的空间，因此不要访问。
 */
 
-// #include <iostream>
-// #include <string>
-// using namespace std;
+#include <iostream>
+#include <string>
+using namespace std;
 
-// int main()
-// {
-    // int a = 10;
-    // int* p;
-    // p = &a;        //让整型指针p记录a的地址
+int main()
+{
+    int a = 10;
+    int* p;
+    p = &a;        //让整型指针p记录a的地址
 
-    // cout<<"数据a的地址为："<<p<<endl;
-    // cout<<"指针指向的内存中的数据为："<<*p<<endl;
-    // *p = 1000;
-    // cout<<"数据a为："<<a<<endl;
+    cout<<"数据a的地址为："<<p<<endl;
+    cout<<"指针指向的内存中的数据为："<<*p<<endl;
+    *p = 1000;
+    cout<<"数据a为："<<a<<endl;
 
-    // cout<<"sizeof(int*) = "<<sizeof(int*)<<endl;
-    // cout<<"sizeof(float*) = "<<sizeof(float*)<<endl;
-    // cout<<"sizeof(char*) = "<<sizeof(char*)<<endl;
-    // cout<<"sizeof(double*) = "<<sizeof(double*)<<endl;
+    cout<<"sizeof(int*) = "<<sizeof(int*)<<endl;
+    cout<<"sizeof(float*) = "<<sizeof(float*)<<endl;
+    cout<<"sizeof(char*) = "<<sizeof(char*)<<endl;
+    cout<<"sizeof(double*) = "<<sizeof(double*)<<endl;
 
-    // int* p = NULL;            //空指针初始化
-    // *p = 100;                 //此句无法写
-    // cout<<*p<<endl;        //此句无法读
+    int* p = NULL;            //空指针初始化
+    *p = 100;                 //此句无法写
+    cout<<*p<<endl;        //此句无法读
 
-    // int* p = (int*)0x1100;         //野指针,指向非法空间
-    // cout<<*p<<endl;
+    int* p = (int*)0x1100;         //野指针,指向非法空间
+    cout<<*p<<endl;
 
-    // system("pause");
+    system("pause");
 
-    // return 0;
-// }
+    return 0;
+}
 
 
 /*

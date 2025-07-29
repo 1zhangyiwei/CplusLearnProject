@@ -1,36 +1,20 @@
 {
-    // 使用 IntelliSense 了解相关属性。 
-    // 悬停以查看现有属性的描述。
-    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "(gdb) 启动",
-            "type": "cppdbg",
-            "request": "launch",
-            // "program": "输入程序名称，例如 ${workspaceFolder}/a.exe",
-            "program": "${fileDirname}\\finally.exe",         //需要调试的可执行程序.exe
-            "args": [],
-            "stopAtEntry": false,
-            "cwd": "${fileDirname}",
-            "environment": [],
-            "externalConsole": false,
-            "MIMode": "gdb",
-            // "miDebuggerPath": "/path/to/gdb",
-            "miDebuggerPath": "C:\\Program Files\\MinGW\\mingw64\\bin\\gdb.exe",       //gdb的位置，放在了C盘
-            "setupCommands": [
-                {
-                    "description": "为 gdb 启用整齐打印",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                },
-                {
-                    "description": "将反汇编风格设置为 Intel",
-                    "text": "-gdb-set disassembly-flavor intel",
-                    "ignoreFailures": true
-                }
-            ]
-        }
-
-    ]
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug C++ File",                         // 配置名称（启动时显示）
+      "type": "cppdbg",                              // 调试器类型，cppdbg 是 C++ (GDB)
+      "request": "launch",                     // 请求类型为启动（launch）程序
+      "program": "${fileDirname}/${fileBasenameNoExtension}.exe",               // 调试的程序路径
+      // "program": "${fileDirname}\\finally.exe",         //需要调试的可执行程序.exe
+      "stopAtEntry": false,                           // 是否暂停在程序入口点
+      "cwd": "${fileDirname}",                        // 工作目录为源文件目录
+      "args": [],                                       // 传递给程序的参数（可选）
+      "externalConsole": false,             // 使用 VSCode 内部终端
+      "internalConsoleOptions": "neverOpen", // 如果不设为neverOpen，调试时会跳到“调试控制台”选项卡，新手调试用不到
+      "miDebuggerPath": "D:\\Profession_software\\MinGW\\mingw64\\bin\\gdb.exe", // 调试器路径（GDB）
+      "MIMode": "gdb",                                // 使用的调试引擎（gdb）
+      "preLaunchTask": "build",                       // 在启动调试前执行的任务
+    }
+  ]
 }
