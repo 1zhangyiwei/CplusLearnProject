@@ -39,11 +39,11 @@
 // int d = 10;
 // string f = "zhangyiwei";
 
-// // int* func1()
-// // {
-// //     int h = 10;
-// //     return &h;
-// // }
+// int* func1()
+// {
+//     int h = 10;
+//     return &h;
+// }
 
 // int* func2()
 // {
@@ -66,40 +66,40 @@
 
 // int main()
 // {
-//     // int a = 10;
-//     // int b = 20;
+//     int a = 10;
+//     int b = 20;
 
-//     // static int e = 15;
+//     static int e = 15;
 
-//     // const int g = 10;
+//     const int g = 10;
 
-//     // cout<<"局部变量a的地址:"<<&a<<endl;         //查看局部变量的地址
-//     // cout<<"局部变量b的地址:"<<&b<<endl;
-//     // cout<<"全局变量c的地址:"<<&c<<endl;         //查看全局变量的地址
-//     // cout<<"全局变量d的地址:"<<&d<<endl;
-//     // cout<<"静态变量e的地址:"<<&e<<endl;         //查看静态变量的地址
-//     // cout<<"字符串常量f的地址:"<<&f<<endl;         //查看字符串常量的地址
-//     // cout<<"const修饰的常量g的地址:"<<&g<<endl;         //查看const修饰的常量的地址    
+//     cout<<"局部变量a的地址:"<<&a<<endl;         //查看局部变量的地址
+//     cout<<"局部变量b的地址:"<<&b<<endl;
+//     cout<<"全局变量c的地址:"<<&c<<endl;         //查看全局变量的地址
+//     cout<<"全局变量d的地址:"<<&d<<endl;
+//     cout<<"静态变量e的地址:"<<&e<<endl;         //查看静态变量的地址
+//     cout<<"字符串常量f的地址:"<<&f<<endl;         //查看字符串常量的地址
+//     cout<<"const修饰的常量g的地址:"<<&g<<endl;         //查看const修饰的常量的地址    
 
-//     // int* i = func1();                          //测试局部变量自动释放，所以无法返回地址。本句必定出错
-//     // cout<<*i<<endl;                           
+    // int* i = func1();                          //测试局部变量自动释放，所以无法返回地址。本句必定出错
+    // cout<<*i<<endl;                           
 
-//     // int* i = func2();                          //使用new在堆区开辟内存
-//     // cout<<*i<<endl;    
-//     // cout<<i<<endl;  
-//     // cout<<*i<<endl;  
-//     // delete i;                                  //使用delete删除开辟出来的堆区变量
-//     // cout<<i<<endl;  
-//     // cout<<*i<<endl;
+    // int* i = func2();                          //使用new在堆区开辟内存
+    // cout<<*i<<endl;    
+    // cout<<i<<endl;  
+    // cout<<*i<<endl;  
+    // delete i;                                  //使用delete删除开辟出来的堆区变量
+    // cout<<i<<endl;  
+    // cout<<*i<<endl;
 
-//     int* p = func3();
-//     cout<<p<<endl;
-//     cout<<*p<<endl;
-//     delete[] p;                                  //使用delete删除开辟出来的堆区数组,指针还在
-//     cout<<*p<<endl;
+    // int* p = func3();
+    // cout<<p<<endl;
+    // cout<<*p<<endl;
+    // delete[] p;                                  //使用delete删除开辟出来的堆区数组,指针还在
+    // cout<<*p<<endl;
 
 
-//     return 0;
+    // return 0;
 // }
 
 
@@ -161,12 +161,12 @@
 //     num2 = temp;
 // }
 
-// // int& test01()
-// // {
-// //     int a = 10;                  //该变量存放在栈区
+// int& test01()
+// {
+//     int a = 10;                  //该变量存放在栈区
 
-// //     return a;
-// // }
+//     return a;
+// }
 
 // int& test02()
 // {
@@ -183,37 +183,37 @@
 
 // int main()
 // {
-//     // int a = 10;
-//     // int &b = a;               //创建引用
-//     // // int &c;                    //引用必须初始化，本句反面例子
-//     // // int d = 20;
-//     // // int &b = d;                  //b重复引用，本句反面例子
-//     // b = 20;
-//     // cout<<a<<endl;
-//     // cout<<b<<endl;
-
-
-//     // int num1 = 10;
-//     // int num2 = 20;
-//     // int* p1 = &num1;
-//     // int* p2 = &num2;
-//     // // swap01(num1, num2);               //值传递
-//     // // swap02(p1, p2);                      //地址传递
-//     // swap03(num1, num2);                  //引用传递
-//     // cout<<"num1 = "<<num1<<endl;
-//     // cout<<"num2 = "<<num2<<endl;
-
-//     // // int& num3 = test01();                   //函数返回值不能是局部变量引用，本句为反例。
-//     // int& num3 = test02();                      //此时函数返回值是全局区的静态变量
-//     // cout<<num3<<endl;                      
-//     // test02() = 1000;                   //引用作为函数返回值，且可作为左值。
-//     // cout<<num3<<endl;
-
 //     int a = 10;
-//     showValue(a);                              //常量引用
+//     int &b = a;               //创建引用
+//     int &c;                    //引用必须初始化，本句反面例子
+//     int d = 20;
+//     int &b = d;                  //b重复引用，本句反面例子
+//     b = 20;
 //     cout<<a<<endl;
+//     cout<<b<<endl;
 
-//     return 0;
+
+    // int num1 = 10;
+    // int num2 = 20;
+    // int* p1 = &num1;
+    // int* p2 = &num2;
+    // // swap01(num1, num2);               //值传递
+    // // swap02(p1, p2);                      //地址传递
+    // swap03(num1, num2);                  //引用传递
+    // cout<<"num1 = "<<num1<<endl;
+    // cout<<"num2 = "<<num2<<endl;
+
+    // // int& num3 = test01();                   //函数返回值不能是局部变量引用，本句为反例。
+    // int& num3 = test02();                      //此时函数返回值是全局区的静态变量
+    // cout<<num3<<endl;                      
+    // test02() = 1000;                   //引用作为函数返回值，且可作为左值。
+    // cout<<num3<<endl;
+
+    // int a = 10;
+    // showValue(a);                              //常量引用
+    // cout<<a<<endl;
+
+    // return 0;
 // }
 
 
@@ -292,9 +292,9 @@
 
 //     // func3(3, 12, 53);
 
-//     // func4();
-//     // func4(5, 's');
-//     // func4('s', 46);
+//     func4();
+//     func4(5, 's');
+//     func4('s', 46);
 
 //     int b = 5;
 //     func4(10);
@@ -393,22 +393,22 @@
 
 // int main()
 // {
-//     // Circle c1;                      //通过圆类，创建一个圆类的对象=实例化。
-//     // c1.r = 2;                       //给圆对象的属性进行赋值
-//     // cout<<c1.get_calculateZC()<<endl;
+    // Circle c1;                      //通过圆类，创建一个圆类的对象=实例化。
+    // c1.r = 2;                       //给圆对象的属性进行赋值
+    // cout<<c1.get_calculateZC()<<endl;
 
-//     // student stu1;                   //练习例子
-//     // stu1.stu_name = "zhangyiwei";
-//     // stu1.stu_ID = 101101;
-//     // stu1.inputStu("张义伟", 2016001951);
-//     // stu1.PringStu();
+    // student stu1;                   //练习例子
+    // stu1.stu_name = "zhangyiwei";
+    // stu1.stu_ID = 101101;
+    // stu1.inputStu("张义伟", 2016001951);
+    // stu1.PringStu();
 
-//     Person peo1;
-//     peo1.name = "张三";
-//     // peo1.car = "宝马";                  //本句反例，类外无法访问protected权限下的成员
-//     // peo1.password = 165151;             //本句反例，类外无法访问private权限下的成员
+    // Person peo1;
+    // peo1.name = "张三";
+    // peo1.car = "宝马";                  //本句反例，类外无法访问protected权限下的成员
+    // peo1.password = 165151;             //本句反例，类外无法访问private权限下的成员
 
-//     return 0;
+    // return 0;
 // }
 
 
@@ -561,12 +561,14 @@
 //     Person()                 //无参-普通构造函数进行初始化
 //     {
 //         cout<<"Person 无参构造函数调用"<<endl;
+//         m_height = nullptr;
 //     }
 
 //     Person(int a)                 //有参-普通构造函数进行初始化
 //     {
 //         age = a;
 //         cout<<"Person 有参构造函数调用"<<endl;
+//         m_height = nullptr;
 //     }
 
 //     Person(int a, int height)
@@ -579,8 +581,13 @@
 //     {
 //         age = p.age;
 //         cout<<"Person 拷贝构造函数调用"<<endl;
-//         m_height =new int(*p.m_height);                //利用深拷贝来解决浅拷贝的问题
-//         *m_height = *p.m_height;
+//         if (p.m_height) {
+//             m_height = new int(*p.m_height);
+//         } else {
+//             m_height = nullptr;
+//         }       
+//         // m_height =new int(*p.m_height);                //利用深拷贝来解决浅拷贝的问题
+//         // *m_height = *p.m_height;
 //     }
 
 //     ~Person()                //析构函数进行清理
@@ -612,38 +619,38 @@
 
 // int main()
 // {
-//     // Person p1;         //实例化，括号法调用无参-普通构造函数，要省略括号，不然会当成函数声明！
-//     // Person p1(10);        //实例化，括号法调用有参-普通构造函数.
-//     // Person p2(p1);           //实例化，括号发调用有参-拷贝构造函数。使用一个已经创建完毕的对象来初始化一个新对象。
-//     // cout<<"p2的年龄："<<p2.age<<endl;
+    // Person p1;         //实例化，括号法调用无参-普通构造函数，要省略括号，不然会当成函数声明！
+    // Person p1(10);        //实例化，括号法调用有参-普通构造函数.
+    // Person p2(p1);           //实例化，括号发调用有参-拷贝构造函数。使用一个已经创建完毕的对象来初始化一个新对象。
+    // cout<<"p2的年龄："<<p2.age<<endl;
 
-//     // Person p3 = Person(10);         //实例化，显示法调用有参-普通构造函数
-//     // Person p4 = Person(p3);         //实例化，显示法调用有参-拷贝构造函数
-//     // // Person(p3);                    //本句反例，不要使用拷贝构造函数初始化匿名对象
+    // Person p3 = Person(10);         //实例化，显示法调用有参-普通构造函数
+    // Person p4 = Person(p3);         //实例化，显示法调用有参-拷贝构造函数
+    // // Person(p3);                    //本句反例，不要使用拷贝构造函数初始化匿名对象
 
-//     // Person p5 = 10;                 //实例化，隐式转换法调用有参-普通构造函数。相当于写了Person p5 =Person(10);
-//     // Person p6 = p5;                 //实例化，隐式转换法调用有参-拷贝构造函数。相当于写了Person p6 = Person(p5)
+    // Person p5 = 10;                 //实例化，隐式转换法调用有参-普通构造函数。相当于写了Person p5 =Person(10);
+    // Person p6 = p5;                 //实例化，隐式转换法调用有参-拷贝构造函数。相当于写了Person p6 = Person(p5)
 
-//     // Person p7;   
-//     // test01(p7);                      //值传递的方式给函数参数传值，实参传给形参的时候也调用了拷贝构造函数
+    // Person p7;   
+    // test01(p7);                      //值传递的方式给函数参数传值，实参传给形参的时候也调用了拷贝构造函数
 
-//     // Person p8 = test02();               //以值方式返回局部对象。
+    // Person p8 = test02();               //以值方式返回局部对象。
 
-//     // Person p9;
-//     // p9.age = 18;
-//     // Person p10(p9);                     // 注释掉自己写的拷贝构造，使用默认拷贝构造函数，对属性进行拷贝，也就是值拷贝。
-//     // cout<<"年龄为："<<p10.age<<endl;
+    // Person p9;
+    // p9.age = 18;
+    // Person p10(p9);                     // 注释掉自己写的拷贝构造，使用默认拷贝构造函数，对属性进行拷贝，也就是值拷贝。
+    // cout<<"年龄为："<<p10.age<<endl;
 
-//     // Person p10(28);
-//     // cout<<"p10年龄为："<<p10.age<<endl;
-//     // Person p11(p10);                      //使用默认拷贝构造，进行浅拷贝。
-//     // cout<<"p11年龄为："<<p11.age<<endl;
+    // Person p10(28);
+    // cout<<"p10年龄为："<<p10.age<<endl;
+    // Person p11(p10);                      //使用默认拷贝构造，进行浅拷贝。
+    // cout<<"p11年龄为："<<p11.age<<endl;
 
-//     Person p12(26, 170);
-//     cout<<"p12年龄和身高分别为："<<p12.age<<"   "<<*p12.m_height<<endl;
-//     Person p13(p12);
-//     cout<<"p13年龄和身高分别为："<<p13.age<<"   "<<*p13.m_height<<endl;
-//     return 0;
+    // Person p12(26, 170);
+    // cout<<"p12年龄和身高分别为："<<p12.age<<"   "<<*p12.m_height<<endl;
+    // Person p13(p12);
+    // cout<<"p13年龄和身高分别为："<<p13.age<<"   "<<*p13.m_height<<endl;
+    // return 0;
 // }
 
 
@@ -681,10 +688,10 @@
 
 // int main()
 // {
-//     // Person p1;                                  //初始化值固定了
-//     // cout<<"p1的年龄为："<<p1.age<<endl;
-//     // cout<<"p1的身高为："<<p1.height<<endl;
-//     // cout<<"p1的分数为："<<p1.score<<endl;
+//     Person p1;                                  //初始化值固定了
+//     cout<<"p1的年龄为："<<p1.age<<endl;
+//     cout<<"p1的身高为："<<p1.height<<endl;
+//     cout<<"p1的分数为："<<p1.score<<endl;
 
 //     Person p2(26, 172, 353);                                  //初始化值定义更加灵活
 //     cout<<"p2的年龄为："<<p2.age<<endl;
@@ -756,9 +763,9 @@
 // }
 
 
-// /*
-//     09 静态成员变量与函数
-// */
+/*
+    09 静态成员变量与函数
+*/
 // #include <iostream>
 // #include <string>
 // using namespace std;
@@ -901,6 +908,8 @@
 // class Person
 // {
 // public:
+//     int m_age;
+
 //     void showName()
 //     {
 //         cout<<"this is zhangyiwei's program!"<<endl;
@@ -914,17 +923,13 @@
 //         }
 //         cout<<"张义伟的年龄是："<<m_age<<endl;
 //     }
-
-// public:
-//     int m_age;
-
 // };
 
 // void test01()
 // {
 //     Person* p = NULL;
 //     p->showName();
-//     // p->showAge();
+//     p->showAge();
 // }
 
 // int main()
@@ -945,6 +950,8 @@
 // class Person
 // {
 // public:
+//     mutable int m_age;
+
 //     Person()
 //     {
 
@@ -955,11 +962,6 @@
 //         m_age = 100;
 //         cout<<m_age<<endl;
 //     }
-
-
-// public:
-//     mutable int m_age;
-
 // };
 
 // void test01()
@@ -972,6 +974,7 @@
 // {
 //     const Person p1;
 //     p1.m_age = 10;
+//     cout<<p1.m_age<<endl;
 //     p1.showName();
 // }
 
@@ -1012,7 +1015,6 @@
 
 // void goodGay(Building* p)
 // {
-//     p->building();
 //     cout<<"正在访问："<<p->sittingRoom<<endl;
 //     cout<<"正在访问："<<p->bedRoom<<endl;
 // }
@@ -1064,7 +1066,6 @@
 // public:
 //     Building home;
 
-// public:
 //     void visit()
 //     {
 //         home.building();
@@ -1708,45 +1709,45 @@
 /*
     29 类模板的成员函数在类外实现
 */
-#include <iostream>
-#include <string>
-using namespace std;
+// #include <iostream>
+// #include <string>
+// using namespace std;
 
-template <class nametype, class agetype>
-class Person
-{
-public:
-    Person(nametype name, agetype age);
+// template <class nametype, class agetype>
+// class Person
+// {
+// public:
+//     Person(nametype name, agetype age);
 
-    void showMe();
+//     void showMe();
 
-    nametype m_name;
-    agetype m_age;
-};
+//     nametype m_name;
+//     agetype m_age;
+// };
 
-template <class nametype, class agetype>
-Person<nametype, agetype>::Person(nametype name, agetype age)
-{
-    m_name = name;
-    m_age = age;
-}
+// template <class nametype, class agetype>
+// Person<nametype, agetype>::Person(nametype name, agetype age)
+// {
+//     m_name = name;
+//     m_age = age;
+// }
 
-template <class nametype, class agetype>
-void Person<nametype, agetype>::showMe()
-{
-    cout<<"姓名："<<this->m_name<<endl;
-    cout<<"年龄："<<this->m_age<<endl;
-}
+// template <class nametype, class agetype>
+// void Person<nametype, agetype>::showMe()
+// {
+//     cout<<"姓名："<<this->m_name<<endl;
+//     cout<<"年龄："<<this->m_age<<endl;
+// }
 
-void test01()
-{
-    Person<string, int>p1("张义伟", 27);
-    p1.showMe();
-}
+// void test01()
+// {
+//     Person<string, int>p1("张义伟", 27);
+//     p1.showMe();
+// }
 
-int main()
-{
-    test01();
+// int main()
+// {
+//     test01();
 
-    return 0;
-}
+//     return 0;
+// }

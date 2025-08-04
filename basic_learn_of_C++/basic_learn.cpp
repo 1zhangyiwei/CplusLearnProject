@@ -114,37 +114,37 @@
     空指针和野指针都不是我们申请的空间，因此不要访问。
 */
 
-#include <iostream>
-#include <string>
-using namespace std;
+// #include <iostream>
+// #include <string>
+// using namespace std;
 
-int main()
-{
-    int a = 10;
-    int* p;
-    p = &a;        //让整型指针p记录a的地址
+// int main()
+// {
+    // int a = 10;
+    // int* p;
+    // p = &a;        //让整型指针p记录a的地址
 
-    cout<<"数据a的地址为："<<p<<endl;
-    cout<<"指针指向的内存中的数据为："<<*p<<endl;
-    *p = 1000;
-    cout<<"数据a为："<<a<<endl;
+    // cout<<"数据a的地址为："<<p<<endl;
+    // cout<<"指针指向的内存中的数据为："<<*p<<endl;
+    // *p = 1000;
+    // cout<<"数据a为："<<a<<endl;
 
-    cout<<"sizeof(int*) = "<<sizeof(int*)<<endl;
-    cout<<"sizeof(float*) = "<<sizeof(float*)<<endl;
-    cout<<"sizeof(char*) = "<<sizeof(char*)<<endl;
-    cout<<"sizeof(double*) = "<<sizeof(double*)<<endl;
+    // cout<<"sizeof(int*) = "<<sizeof(int*)<<endl;
+    // cout<<"sizeof(float*) = "<<sizeof(float*)<<endl;
+    // cout<<"sizeof(char*) = "<<sizeof(char*)<<endl;
+    // cout<<"sizeof(double*) = "<<sizeof(double*)<<endl;
 
-    int* p = NULL;            //空指针初始化
-    *p = 100;                 //此句无法写
-    cout<<*p<<endl;        //此句无法读
+    // int* p = NULL;            //空指针初始化
+    // *p = 100;                 //此句无法写
+    // cout<<*p<<endl;        //此句无法读
 
-    int* p = (int*)0x1100;         //野指针,指向非法空间
-    cout<<*p<<endl;
+//     int* p = (int*)0x1100;         //野指针,指向非法空间
+//     cout<<*p<<endl;
 
-    system("pause");
+//     system("pause");
 
-    return 0;
-}
+//     return 0;
+// }
 
 
 /*
@@ -174,6 +174,7 @@ int main()
 //         cout<<"数组第"<<i<<"个元素为"<<*p2<<endl;
 //         p2++;
 //     }
+
 
 //     // system("pause");
 
@@ -245,13 +246,6 @@ int main()
 
 // int main()
 // {
-//     // struct student              //定义结构体数据类型student
-//     // {
-//     //     string name;
-//     //     int age;
-//     //     double score;
-//     // }s3;                       //方式三创建结构体变量
-
 //     student s1;                //方式一创建结构体变量
 //     s1.name = "zhangyiwei";
 //     s1.age = 26;
@@ -259,7 +253,9 @@ int main()
 //     cout<<s1.name<<"\t"<<s1.age<<"\t"<<s1.score<<endl; 
 
 //     student s2 = {"zhangyiwei",26,352.5};         //方式二创建结构体变量
+//     student s3 = {"baiqi",21,320};         //方式二创建结构体变量
 //     cout<<s2.name<<"\t"<<s2.age<<"\t"<<s2.score<<endl; 
+//     cout<<s3.name<<"\t"<<s3.age<<"\t"<<s3.score<<endl; 
     
 //     return 0;
 // }
@@ -300,7 +296,7 @@ int main()
 //         {"张三",12,251},
 //         {"李四",25,347}
 //     };
-    
+
 //     for (int i = 0; i < 2; i++)
 //     {
 //         cout<<test2[i].name<<"\t"<<test2[i].age<<"\t"<<test2[i].score<<endl;
@@ -315,7 +311,7 @@ int main()
     通过指针访问结构体中的成员。
     结构体变量可以通过操作符.访问结构体属性。
     结构体指针可以通过操作符->访问结构体属性。
-    解引用在结构体指针里为啥不能用？
+    解引用在结构体指针里为啥不能用？没有告诉编译器“怎么打印一个 student 对象”，所以编译器报错。可以通过运算符重载来解决。
 */
 // #include <iostream>
 // #include <string>
@@ -334,10 +330,8 @@ int main()
 //     student* p = &s1;        //指针指向结构体变量
 
 //     cout<<"姓名："<<p->name<<"   年龄："<<p->age<<"   成绩："<<p->score<<endl;
-
 //     return 0;
 // }
-
 
 /*
     08 结构体嵌套结构体
@@ -347,36 +341,36 @@ int main()
 // #include <iostream>
 // #include <string>
 // using namespace std;
-
+// 
 // struct student                //定义结构体数据类型
 // {
-//     string name;
-//     int age;
-//     double score;
+    // string name;
+    // int age;
+    // double score;
 // };
-
+// 
 // struct teacher                //定义结构体数据类型
 // {
-//     int ID;
-//     string name;
-//     int age;
-//     student stu;
+    // int ID;
+    // string name;
+    // int age;
+    // student stu;
 // };
-
+// 
 // int main()
 // {
-//     teacher t;                               //创建结构体
-//     t.ID = 1;
-//     t.name = "奥云";
-//     t.age = 30;
-
-//     t.stu.name = "zhangyiwei";               //方式一，赋值嵌套结构体内的变量
-//     t.stu = {"张义伟", 10, 99};          //方式二，赋值嵌套结构体内的变量
-
-//     cout<<"教师编号："<<t.ID<<"    教师姓名："<<t.name<<"      教师年龄："<<t.age<<"\n"
-//         <<"所带学生姓名："<<t.stu.name<<"       所带学生年龄："<<t.stu.age<<"      所带学生分数："<<t.stu.score<<endl;
-
-//     return 0;
+    // teacher t;                               //创建结构体
+    // t.ID = 1;
+    // t.name = "奥云";
+    // t.age = 30;
+// 
+    // t.stu.name = "zhangyiwei";               //方式一，赋值嵌套结构体内的变量
+    // t.stu = {"张义伟", 10, 99};          //方式二，赋值嵌套结构体内的变量
+// 
+    // cout<<"教师编号："<<t.ID<<"    教师姓名："<<t.name<<"      教师年龄："<<t.age<<"\n"
+        // <<"所带学生姓名："<<t.stu.name<<"       所带学生年龄："<<t.stu.age<<"      所带学生分数："<<t.stu.score<<endl;
+// 
+    // return 0;
 // }
 
 
@@ -422,9 +416,9 @@ int main()
 //     st = {"张义伟", 26, 352};
 //     student* p = &st;
 
-//     PrintStu1(p);               //地址传递
+//     // PrintStu1(p);               //地址传递
 //     // PrintStu2(st);            //值传递。这里只是打印学生信息，所以不会改变实参，也就可以用值传递的方法。
-//     // PrintStu3(p);               //地址传递,加了const修饰，使函数无法修改实参。
+//     PrintStu3(p);               //地址传递,加了const修饰，使函数无法修改实参。
 
 //     cout<<"main函数中 学生姓名:"<<st.name<<"\n"<<"学生年龄:"<<st.age<<"\n"<<"学生分数:"<<st.score<<endl;
 
